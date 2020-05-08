@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>systemjs</title>
+</head>
+
+<body>
+    <h1>try systemjs</h1>
+    <!-- <div id="root">
+        <%= htmlWebpackPlugin.options.loading.html %>
+    </div> -->
+    <!-- <script type="module">
+        import('./index.js').then(_ => {
+            console.log('我支持modul');
+            console.log(_.default, _);
+            new _.default().action();
+        });
+    </script> -->
+    <script type="module" src="https://cdn.staticfile.org/systemjs/3.0.0/system.js"></script>
+    <script type="module">
+        window.System.import('../index-bundle.js').then(_=>{
+            console.log(_.default, _);
+            new _.default().action();
+        });
+    </script>
+</body>
+
+</html>
